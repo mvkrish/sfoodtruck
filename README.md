@@ -1,4 +1,4 @@
-# Find a foodtuck closer to you in SFO downtown.
+# Find a foodtruck closer to you in SFO downtown.
 
 ## Running Locally
 
