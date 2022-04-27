@@ -1,7 +1,7 @@
-# Google Maps in React
-
-YouTube video can be found here: [https://youtu.be/Pf7g32CwX_s](https://youtu.be/Pf7g32CwX_s)
+# Find a foodtuck closer to you in SFO downtown.
 
 ## Running Locally
 
-Google Maps API Key: Create a new API key from the Google developer console, making sure that `Maps JavaScript API` has been enabled. Copy that key into your `.env.local` file creating an ENV var with the name `REACT_APP_GOOGLE_KEY`.
+You will need a Google Maps API Key to run this app locally.
+Create a new API key from the Google Cloud Platform console,  
+`.env.local` file creating an ENV var with the name `SFO_FOODTRUCK_APP_GOOGLE_KEY`.
