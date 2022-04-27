@@ -3,5 +3,5 @@
 ## Running Locally
 
 You will need a Google Maps API Key to run this app locally.
-Create a new API key from the Google Cloud Platform console,  
-`.env.local` file creating an ENV var with the name `REACT_APP_FOODTRUCK_APP_GOOGLE_KEY`.
+Create a new API key from the Google Cloud Platform console, then in  
+`.env.local` file create an ENV var with the name `REACT_APP_FOODTRUCK_APP_GOOGLE_KEY`.
