@@ -12,19 +12,20 @@ import * as geolib from 'geolib';
 
 function SFOMap() {
   let trucks = new Map();
-  const maxNoOfSuggestions=7;
+  const maxNoOfSuggestions = 7;
   //load the foodTruck data and map required props
   truckData.forEach(truck => {
     trucks.set(truck.locationid,
       {
         locationId: truck.locationid,
         foodItem: truck.foodItems,
-        address:truck.address,
+        address: truck.address,
         name: truck.applicant,
         latitude: truck.latitude,
         longitude: truck.longitude
       });
   });
+  // hooks for tracking close by trucks and selected trucks
   const [selectedTruck, setSelectedTruck] = useState(null);
   const [trucksCloseBy, setTrucksCloseBy] = useState(null);
   useEffect(() => {
@@ -49,18 +50,22 @@ function SFOMap() {
         //clear the state when user clicked at new latlng.
         setTrucksCloseBy(null);
         setSelectedTruck(null);
-        //set the set 
+        //Find the # of closest truck realtive to the mouse click location
         setTrucksCloseBy(geolib.orderByDistance(myLocation, Array.from(trucks.values())).slice(0, maxNoOfSuggestions));
       }}
     >
+       {
+       //place the trucks in the respective latlng in the map
+       }
       {trucksCloseBy && (trucksCloseBy.map(truck => (
         <Marker
-          key = {truck.locationId}
+          key={truck.locationId}
           position={{
             lat: truck.latitude,
             lng: truck.longitude
           }}
           onClick={() => {
+            // set the selected Truck to show the info
             setSelectedTruck(truck);
           }}
           icon={{
@@ -69,6 +74,9 @@ function SFOMap() {
           }}
         />
       )))}
+      {
+      // show information of the selected truck
+      }
       {selectedTruck && (
         <InfoWindow
           onCloseClick={() => {
@@ -96,7 +104,7 @@ export default function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <MapWrapped
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.SFO_FOODTRUCK_APP_GOOGLE_KEY
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_FOODTRUCK_APP_GOOGLE_KEY
           }`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
