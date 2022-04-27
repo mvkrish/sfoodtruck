@@ -7,4 +7,4 @@ Create a new API key from the Google Cloud Platform console,
 `.env.local` file creating an ENV var with the name `SFO_FOODTRUCK_APP_GOOGLE_KEY`.
 
 Demo:
-[foodtruck.gif]
+![](foodtruck.gif)
