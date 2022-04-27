@@ -49,10 +49,11 @@ function SFOMap() {
         //clear the state when user clicked at new latlng.
         setTrucksCloseBy(null);
         setSelectedTruck(null);
-        //set the set 
+        //Find the # of closest truck realtive to the mouse click location
         setTrucksCloseBy(geolib.orderByDistance(myLocation, Array.from(trucks.values())).slice(0, maxNoOfSuggestions));
       }}
     >
+      // place the trucks in the respective latlng in the map
       {trucksCloseBy && (trucksCloseBy.map(truck => (
         <Marker
           key = {truck.locationId}
@@ -69,6 +70,7 @@ function SFOMap() {
           }}
         />
       )))}
+      // show information of the selected truck
       {selectedTruck && (
         <InfoWindow
           onCloseClick={() => {
