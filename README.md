@@ -1,6 +1,6 @@
 # Find a food truck closer to you in SFO downtown.
 
-If you click on the map at your desired location the app will find the nearest 7 food trucks for you. This version is very simple and uses [geolib](https://github.com/manuelbieh/geolib) and [react-google-maps](https://tomchentw.github.io/react-google-maps/) library to achieve the outcome. 
+If you click on the map at your desired location, the app will find the nearest 7 food trucks for you. This simple version uses [geolib](https://github.com/manuelbieh/geolib) and [react-google-maps](https://tomchentw.github.io/react-google-maps/) library to achieve the desired outcome.
 
 ## Running Locally
 * clone or download the code
