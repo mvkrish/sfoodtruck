@@ -1,5 +1,7 @@
 # Find a food truck closer to you in SFO downtown.
 
+If you click on the map at your desired location the app will find the nearest 7 food trucks for you.
+
 ## Running Locally
 
 You will need a Google Maps API Key to run this app locally.
