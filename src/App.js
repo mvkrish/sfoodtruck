@@ -15,6 +15,7 @@ function SFOMap() {
   const maxNoOfSuggestions = 7;
   //load the foodTruck data and map required props
   truckData.forEach(truck => {
+    if (truck.latitude > 0 && truck.status ==='APPROVED'){
     trucks.set(truck.locationid,
       {
         locationId: truck.locationid,
@@ -22,8 +23,10 @@ function SFOMap() {
         address: truck.address,
         name: truck.applicant,
         latitude: truck.latitude,
-        longitude: truck.longitude
+        longitude: truck.longitude,
+        hours:truck.dayshours
       });
+    }
   });
   // hooks for tracking close by trucks and selected trucks
   const [selectedTruck, setSelectedTruck] = useState(null);
@@ -91,6 +94,7 @@ function SFOMap() {
             <h2>{selectedTruck.name}</h2>
             <p>{selectedTruck.address}</p>
             <p>{selectedTruck.foodItem}</p>
+            <p>{selectedTruck.hours }</p>
           </div>
         </InfoWindow>
       )}
